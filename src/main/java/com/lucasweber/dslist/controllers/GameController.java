@@ -1,11 +1,13 @@
 package com.lucasweber.dslist.controllers;
 
+import com.lucasweber.dslist.dto.GameDTO;
 import com.lucasweber.dslist.dto.GameMinDTO;
 import com.lucasweber.dslist.services.GameService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +25,11 @@ public class GameController {
     @GetMapping
     public ResponseEntity<List<GameMinDTO>> getAllGameMinDTO(){
         return new ResponseEntity<>(gameService.getAllMinGames(), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<GameDTO> getGameById(@PathVariable Long id){
+        return new ResponseEntity<>(gameService.getGameById(id), HttpStatus.OK);
     }
 
 }
