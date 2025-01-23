@@ -1,0 +1,14 @@
+# Use postgres/example user/password credentials
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: bd-postgres-dslist
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: lucasweber
+      POSTGRES_PASSWORD: supersenha
+    ports:
+      - 5435:5432
