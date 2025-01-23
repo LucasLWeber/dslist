@@ -2,16 +2,12 @@ package com.lucasweber.dslist.dto;
 
 
 import com.lucasweber.dslist.entities.Game;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class GameMinDTO {
     private Long id;
     private String title;

@@ -1,11 +1,10 @@
 package com.lucasweber.dslist.dto;
 
 import com.lucasweber.dslist.entities.Game;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 public class GameDTO {
