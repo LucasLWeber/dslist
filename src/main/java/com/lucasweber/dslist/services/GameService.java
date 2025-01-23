@@ -30,7 +30,8 @@ public class GameService {
         return new GameDTO(game);
     }
     @Transactional(readOnly = true)
-    public List<GameMinProjection> getAllGameByListId(Long listId) {
-        return gameRepository.searchGameList(listId);
+    public List<GameMinDTO> getAllGameByListId(Long listId) {
+        List<GameMinProjection> projection = gameRepository.searchGameList(listId);
+        return projection.stream().map(GameMinDTO::new).toList();
     }
 }

@@ -1,6 +1,7 @@
 package com.lucasweber.dslist.controllers;
 
 import com.lucasweber.dslist.dto.GameListDTO;
+import com.lucasweber.dslist.dto.GameMinDTO;
 import com.lucasweber.dslist.projections.GameMinProjection;
 import com.lucasweber.dslist.services.GameListService;
 import com.lucasweber.dslist.services.GameService;
@@ -30,7 +31,7 @@ public class GameListController {
     }
 
     @GetMapping("/{listId}/games")
-    public ResponseEntity<List<GameMinProjection>> getGamesByListId(@PathVariable Long listId){
+    public ResponseEntity<List<GameMinDTO>> getGamesByListId(@PathVariable Long listId){
         return new ResponseEntity<>(gameService.getAllGameByListId(listId), HttpStatus.OK);
     }
 }
